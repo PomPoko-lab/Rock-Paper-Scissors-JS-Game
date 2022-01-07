@@ -11,7 +11,8 @@ const gameChoices = ['rock', 'paper', 'scissor']; // Array of possible choices
  * @returns 
  */
 
-const computerPlay = choice => {
+const computerPlay = () => {
+    choice = gameChoices;
     return choice[Math.floor(Math.random() * choice.length)];
 };
 
@@ -43,9 +44,15 @@ const playRound = (cpuchoice, playerchoice) => {
     if (cpuchoice === 'rock' && playerchoice === 'paper' ||
     cpuchoice === 'paper' && playerchoice === 'scissor' ||
     cpuchoice === 'scissor' && playerchoice === 'rock') {
-        return 'You win!';
+        return `You win the round!
+        You chose: ${playerchoice}
+        CPU chose: ${cpuchoice}
+        You got lucky!`;
     } else {
-        return 'You lose!';
+        return `You lose the round!
+        You chose: ${playerchoice}
+        CPU chose: ${cpuchoice}
+        You're bad.`;
     }
 }
 
@@ -53,22 +60,32 @@ const game = () => {
 
     let cpuWins = 0;
     let playerWins = 0;
-    let roundPlay = playRound(computerSelection, playerSelection);
 
-    for (let i = 0; i <= 5; i++) {
+    for (let i = 1; i <= 5; i++) {
+
+        let roundPlay = playRound(computerPlay(), playerPlay());
+
+        roundPlay;
+
         if (roundPlay.includes('win')) {
             playerWins++;
+            console.log(roundPlay);
         } else {
             cpuWins++;
+            console.log(roundPlay);
         };
+    }
+
+    if (playerWins > cpuWins) {
+        return `Winner! 
+        You won ${playerWins} rounds. CPU won ${cpuWins} rounds.`;
+    } else {
+        return `Game Over. 
+        You won ${playerWins} rounds. CPU won ${cpuWins} rounds.`;
     }
 }
 
-let computerSelection = computerPlay(gameChoices);
-let playerSelection = playerPlay();
+console.log(game());
 
-// console.log(playRound(computerSelection, playerSelection));
-
-// // console.log(game());
-
-// console.log(playRound(computerSelection, playerSelection).includes('win'));
+// console.log(playRound(computerPlay(), playerPlay()));
+// console.log(playRound(computerPlay(), playerPlay()));
