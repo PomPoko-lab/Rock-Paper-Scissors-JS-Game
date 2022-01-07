@@ -1,6 +1,6 @@
 /* User provides an input of rock, paper, or scissors
 The computer will provide an input of either.
-Compare the two inputs. If input is better than input, owner wins
+Compare the two inputs. If input is better than input, owner wins.
 */
 
 const gameChoices = ['rock', 'paper', 'scissor']; // Array of possible choices
@@ -25,7 +25,7 @@ const computerPlay = () => {
 const playerPlay = () => {
 
     let userInput = prompt('So, rock, paper, or scissor?: ').toLowerCase(); // Grabs user input into a variable.
-    
+
     while (!(gameChoices.includes(userInput))){
         userInput = prompt('Please play correctly: ').toLowerCase();
     }
@@ -55,6 +55,11 @@ const playRound = (cpuchoice, playerchoice) => {
         You're bad.`;
     }
 }
+
+/**
+ * Plays the game 5 times.
+ * @returns 
+ */
 
 const game = () => {
 
@@ -86,6 +91,3 @@ const game = () => {
 }
 
 console.log(game());
-
-// console.log(playRound(computerPlay(), playerPlay()));
-// console.log(playRound(computerPlay(), playerPlay()));
