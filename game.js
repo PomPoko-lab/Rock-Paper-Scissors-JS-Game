@@ -31,23 +31,44 @@ const playerPlay = () => {
     return userInput;
 };
 
+/**
+ * Plays a single round of the game
+ * @param {string} cpuchoice 
+ * @param {string} playerchoice 
+ * @returns 
+ */
+
 const playRound = (cpuchoice, playerchoice) => {
-    const playerWin = 'You win!';
-    const cpuWin = 'You lose!';
     
     if (cpuchoice === 'rock' && playerchoice === 'paper' ||
     cpuchoice === 'paper' && playerchoice === 'scissor' ||
     cpuchoice === 'scissor' && playerchoice === 'rock') {
-        return playerWin;
+        return 'You win!';
     } else {
-        return cpuWin;
+        return 'You lose!';
+    }
+}
+
+const game = () => {
+
+    let cpuWins = 0;
+    let playerWins = 0;
+    let roundPlay = playRound(computerSelection, playerSelection);
+
+    for (let i = 0; i <= 5; i++) {
+        if (roundPlay.includes('win')) {
+            playerWins++;
+        } else {
+            cpuWins++;
+        };
     }
 }
 
 let computerSelection = computerPlay(gameChoices);
 let playerSelection = playerPlay();
 
-console.log(playRound(computerSelection, playerSelection));
+// console.log(playRound(computerSelection, playerSelection));
 
+// // console.log(game());
 
-// console.log(playerPlay(userInput));
+// console.log(playRound(computerSelection, playerSelection).includes('win'));
