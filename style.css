@@ -62,7 +62,7 @@ div p.computer-choice {
     font-size: 40px;
     margin: 0px;
     padding: 0px;
-    display: block;
+    display: none;
 }
 
 div.computerTurn > :nth-child(1) {
@@ -92,5 +92,4 @@ div .results {
     font-family: e-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 50px;
     padding: 50px;
-
 }
