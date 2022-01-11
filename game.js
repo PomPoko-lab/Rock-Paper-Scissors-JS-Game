@@ -22,15 +22,15 @@ const computerPlay = () => {
  * @returns 
  */
 
-const playerPlay = () => {
+// const playerPlay = () => {
 
-    let userInput = prompt('So, rock, paper, or scissor?: ').toLowerCase(); // Grabs user input into a variable.
+//     let userInput = prompt('So, rock, paper, or scissor?: ').toLowerCase(); // Grabs user input into a variable.
 
-    while (!(gameChoices.includes(userInput))){
-        userInput = prompt('Please play correctly: ').toLowerCase();
-    }
-    return userInput;
-};
+//     while (!(gameChoices.includes(userInput))){
+//         userInput = prompt('Please play correctly: ').toLowerCase();
+//     }
+//     return userInput;
+// };
 
 /**
  * Plays a single round of the game
@@ -44,15 +44,9 @@ const playRound = (cpuchoice, playerchoice) => {
     if (cpuchoice === 'rock' && playerchoice === 'paper' ||
     cpuchoice === 'paper' && playerchoice === 'scissor' ||
     cpuchoice === 'scissor' && playerchoice === 'rock') {
-        return `You win the round!
-        You chose: ${playerchoice}
-        CPU chose: ${cpuchoice}
-        You got lucky!`;
+        return 'WIN';
     } else {
-        return `You lose the round!
-        You chose: ${playerchoice}
-        CPU chose: ${cpuchoice}
-        You're bad.`;
+        return 'LOSE';
     }
 }
 
@@ -90,4 +84,31 @@ const game = () => {
     }
 }
 
-console.log(game());
+const buttonRock = document.querySelector('#rock');
+const buttonPaper = document.querySelector('#paper');
+const buttonScissor = document.querySelector('#scissor');
+const computerChoice = document.querySelector('.computer-choice');
+const gameResults = document.querySelector('.results');
+
+let playerPlay;
+
+buttonRock.addEventListener('click', () => {
+    playerPlay = 'rock';
+    computerRoll = computerPlay();
+    computerChoice.style.display = 'block';
+    computerChoice.textContent = computerRoll;
+    gameResults.textContent = playRound(computerRoll, playerPlay);
+})
+
+buttonPaper.addEventListener('click', () => {
+    playerPlay = 'paper';
+    computerRoll = computerPlay();
+    computerChoice.textContent = computerRoll;
+    gameResults.textContent = playRound(computerRoll, playerPlay);
+})
+buttonScissor.addEventListener('click', () => {
+    playerPlay = 'scissor';
+    computerRoll = computerPlay();
+    computerChoice.textContent = computerRoll;
+    gameResults.textContent = playRound(computerRoll, playerPlay);
+})

@@ -2,9 +2,28 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Rock Paper Scissors</title>
+        <title>A Simple RPS game</title>
         <script src="game.js" defer></script>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <div class='main-container'>
+            <div class='container-header'>
+                <h1>Rock, Paper, Scissors</h1>
+                <p>by Pom Poko Lab</p>
+            </div>
+        <div class='user-inputs'>
+            <button id='rock'>Rock</button>
+            <button id='paper'>Paper</button>
+            <button id='scissor'>Scissor</button>
+        </div>
+        <div class='computerTurn'>
+            <p>Computer's choice: </p>
+            <p class='computer-choice'>null</p>
+        </div>
+        <div class='game-results-container'>
+            <p class='results'>WIN</p>
+        </div>
+        </div>
     </body>
 </html>

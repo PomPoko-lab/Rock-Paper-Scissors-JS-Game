@@ -1,0 +1,95 @@
+body {
+    background-color: #30302f;
+    display: flex;
+    justify-content: center;
+}
+
+div.main-container {
+    background-color: #595958;
+    max-width: 600px;
+    height: 700px;
+    display:flex;
+    flex: 0 0 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    border: 1px solid #1f1f1e;
+}
+
+div.container-header {
+    background-color: #7d7d7c;
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+div.container-header p {
+    color: white;
+    margin-top: 26px;
+    padding: 0px 0px 0px 4px;
+    font-size: 8px;
+}
+
+div.container-header h1 {
+    color: white;
+    font-size: 20px;
+}
+
+div.user-inputs {
+    min-height: 30%;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.computerTurn {
+    display: block;
+    border: 1px solid #1c1c1c;
+    width: 400px;
+    height: 300px;
+    margin: 0px 35px 35px 35px;
+    padding: 10px 15px 10px 15px;
+}
+
+div p.computer-choice {
+    color: gold;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    margin: 0px;
+    padding: 0px;
+    display: none;
+}
+
+div.computerTurn > :nth-child(1) {
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    margin-top: -5px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+button {
+    margin: 15px;
+    height: 130px;
+    width: 135px;
+}
+
+div.game-results-container {
+    flex: 1 1 100%;
+    width: 100%;
+    background: #212120;
+}
+
+div .results {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-family: e-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 50px;
+    padding: 50px;
+}
