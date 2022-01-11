@@ -103,12 +103,14 @@ buttonRock.addEventListener('click', () => {
 buttonPaper.addEventListener('click', () => {
     playerPlay = 'paper';
     computerRoll = computerPlay();
+    computerChoice.style.display = 'block';
     computerChoice.textContent = computerRoll;
     gameResults.textContent = playRound(computerRoll, playerPlay);
 })
 buttonScissor.addEventListener('click', () => {
     playerPlay = 'scissor';
     computerRoll = computerPlay();
+    computerChoice.style.display = 'block';
     computerChoice.textContent = computerRoll;
     gameResults.textContent = playRound(computerRoll, playerPlay);
 })
